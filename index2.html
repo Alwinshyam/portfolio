@@ -1,0 +1,165 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+
+    <title inertia="">Dashboard - HackQuest</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="sa.css">
+ 
+
+<style type="text/css">
+    #nprogress {
+      pointer-events: none;
+    }
+
+    #nprogress .bar {
+      background: #4B5563;
+
+      position: fixed;
+      z-index: 1031;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 2px;
+    }
+
+    #nprogress .peg {
+      display: block;
+      position: absolute;
+      right: 0px;
+      width: 100px;
+      height: 100%;
+      box-shadow: 0 0 10px #4B5563, 0 0 5px #4B5563;
+      opacity: 1.0;
+
+      -webkit-transform: rotate(3deg) translate(0px, -4px);
+          -ms-transform: rotate(3deg) translate(0px, -4px);
+              transform: rotate(3deg) translate(0px, -4px);
+    }
+
+    #nprogress .spinner {
+      display: block;
+      position: fixed;
+      z-index: 1031;
+      top: 15px;
+      right: 15px;
+    }
+
+    #nprogress .spinner-icon {
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+
+      border: solid 2px transparent;
+      border-top-color: #4B5563;
+      border-left-color: #4B5563;
+      border-radius: 50%;
+
+      -webkit-animation: nprogress-spinner 400ms linear infinite;
+              animation: nprogress-spinner 400ms linear infinite;
+    }
+
+    .nprogress-custom-parent {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .nprogress-custom-parent #nprogress .spinner,
+    .nprogress-custom-parent #nprogress .bar {
+      position: absolute;
+    }
+
+    @-webkit-keyframes nprogress-spinner {
+      0%   { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes nprogress-spinner {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style></head>
+<body class="font-sans antialiased dark">
+<div id="app" data-page="{&quot;component&quot;:&quot;Dashboard&quot;,&quot;props&quot;:{&quot;errors&quot;:{},&quot;auth&quot;:{&quot;user&quot;:{&quot;id&quot;:26219,&quot;name&quot;:&quot;Alwin Shyam F&quot;,&quot;username&quot;:&quot;DT20245142708&quot;,&quot;email&quot;:&quot;alwinshyam21@gmail.com&quot;,&quot;email_verified_at&quot;:&quot;2024-01-07T18:14:20.000000Z&quot;,&quot;created_at&quot;:&quot;2024-01-07T18:13:54.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-01-07T18:14:20.000000Z&quot;}},&quot;ziggy&quot;:{&quot;url&quot;:&quot;https:\/\/hackquest.tcsapps.com&quot;,&quot;port&quot;:null,&quot;defaults&quot;:[],&quot;routes&quot;:{&quot;sanctum.csrf-cookie&quot;:{&quot;uri&quot;:&quot;sanctum\/csrf-cookie&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;dashboard&quot;:{&quot;uri&quot;:&quot;dashboard&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;report&quot;:{&quot;uri&quot;:&quot;report&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;downloadTemplate&quot;:{&quot;uri&quot;:&quot;downloadTemplate&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;challenge&quot;:{&quot;uri&quot;:&quot;challenge\/{slug}&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;],&quot;parameters&quot;:[&quot;slug&quot;]},&quot;toChal&quot;:{&quot;uri&quot;:&quot;toChal\/{name}&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;],&quot;parameters&quot;:[&quot;name&quot;]},&quot;toChalDownload&quot;:{&quot;uri&quot;:&quot;challenge\/{slug}\/download&quot;,&quot;methods&quot;:[&quot;POST&quot;],&quot;parameters&quot;:[&quot;slug&quot;]},&quot;postToChallenge&quot;:{&quot;uri&quot;:&quot;challenge\/{slug}&quot;,&quot;methods&quot;:[&quot;POST&quot;],&quot;parameters&quot;:[&quot;slug&quot;]},&quot;admin&quot;:{&quot;uri&quot;:&quot;admin&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;adminDashboard&quot;:{&quot;uri&quot;:&quot;admin\/dashboard&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;adminLeaderboard&quot;:{&quot;uri&quot;:&quot;admin\/leaderboard&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;about&quot;:{&quot;uri&quot;:&quot;about&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;cookiePolicy&quot;:{&quot;uri&quot;:&quot;cookie-policy&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;terms.show&quot;:{&quot;uri&quot;:&quot;terms-and-conditions&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;profile.edit&quot;:{&quot;uri&quot;:&quot;profile&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;profile.update&quot;:{&quot;uri&quot;:&quot;profile&quot;,&quot;methods&quot;:[&quot;PATCH&quot;]},&quot;login&quot;:{&quot;uri&quot;:&quot;login&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;password.request&quot;:{&quot;uri&quot;:&quot;forgot-password&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;password.email&quot;:{&quot;uri&quot;:&quot;forgot-password&quot;,&quot;methods&quot;:[&quot;POST&quot;]},&quot;password.reset&quot;:{&quot;uri&quot;:&quot;reset-password\/{token}&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;],&quot;parameters&quot;:[&quot;token&quot;]},&quot;password.store&quot;:{&quot;uri&quot;:&quot;reset-password&quot;,&quot;methods&quot;:[&quot;POST&quot;]},&quot;verification.notice&quot;:{&quot;uri&quot;:&quot;verify-email&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;verification.verify&quot;:{&quot;uri&quot;:&quot;verify-email\/{id}\/{hash}&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;],&quot;parameters&quot;:[&quot;id&quot;,&quot;hash&quot;]},&quot;verification.send&quot;:{&quot;uri&quot;:&quot;email\/verification-notification&quot;,&quot;methods&quot;:[&quot;POST&quot;]},&quot;password.confirm&quot;:{&quot;uri&quot;:&quot;confirm-password&quot;,&quot;methods&quot;:[&quot;GET&quot;,&quot;HEAD&quot;]},&quot;password.update&quot;:{&quot;uri&quot;:&quot;password&quot;,&quot;methods&quot;:[&quot;PUT&quot;]},&quot;logout&quot;:{&quot;uri&quot;:&quot;logout&quot;,&quot;methods&quot;:[&quot;POST&quot;]}},&quot;location&quot;:&quot;https:\/\/hackquest.tcsapps.com\/dashboard&quot;}},&quot;url&quot;:&quot;\/dashboard&quot;,&quot;version&quot;:&quot;e67e2b96f6a12f1d0bd44d9b577efa75&quot;}" data-v-app=""><div class="dark"><!----><div><!----></div><div class="pt-16 min-h-screen circuitBg flex-column flex-col" id="bgArea"><nav class="fixed top-0 z-10 w-full bg-white dark:bg-black dark:text-gray-200 border-b border-gray-100 dark:border-gray-800"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between h-16"><div class="flex"><!-- Removed the Dashboard and Upload/Download Report elements --></div><div class="hidden sm:flex sm:items-center sm:ml-6"></div><div class="-mr-2 flex items-center sm:hidden"><button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition"><svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path><path class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div></div><div class="hidden sm:hidden"><div class="pt-2 pb-3 space-y-1"></div><div class="pt-4 pb-1 border-t border-gray-200"><div class="flex items-center px-4"><div><div class="font-medium text-base text-gray-800">Alwin Shyam F</div><div class="font-medium text-sm text-gray-500"></div></div></div><div class="mt-3 space-y-1"><div></div><form method="POST"><div></div></form></div></div></div></nav>
+    <main class="relative grow" style="overflow: hidden;">
+        <div class="py-8">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+                        <a href="https://github.com/Alwinshyam" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">brain tumor detection </div>
+                                <div class="chalCardDesc"><span>[Python,DeepLearning]</span></div>
+                            </div>
+                        </a>
+                        <a href="" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">Baby Shark Dododo</div>
+                                <div class="chalCardDesc"><span>Unsolved</span></div>
+                            </div>
+                        </a>
+                        <a href="" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">Packet Prowler</div>
+                                <div class="chalCardDesc"><span>Unsolved</span></div>
+                            </div>
+                        </a>
+                        <a href="" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">Web Chronicle</div>
+                                <div class="chalCardDesc"><span>Unsolved</span></div>
+                            </div>
+                        </a>
+                        <a href="" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">Miss Magic</div>
+                                <div class="chalCardDesc"><span>Unsolved</span></div>
+                            </div>
+                        </a>
+                        <a href="" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">Binary Heist</div>
+                                <div class="chalCardDesc"><span>Unsolved</span></div>
+                            </div>
+                        </a>
+                        <a href="" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">Cloak and Dagger</div>
+                                <div class="chalCardDesc"><span>Unsolved</span></div>
+                            </div>
+                        </a>
+                        <a href="" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">Trusting responses</div>
+                                <div class="chalCardDesc"><span>Unsolved</span></div>
+                            </div>
+                        </a>
+                        <a href="" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">Deceptive Mayhem</div>
+                                <div class="chalCardDesc"><span>Unsolved</span></div>
+                            </div>
+                        </a>
+                        <a href="" class="cursor-pointer chalCard">
+                            <div class="chalCardInner">
+                                <div class="chalCardTitle">Search Shenanigans</div>
+                                <div class="chalCardDesc"><span>Unsolved</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+
+</html>
